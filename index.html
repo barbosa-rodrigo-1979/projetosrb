@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--                    ===================================================================
+                     projetosrb · Portfólio de Soluções
+     ===================================================================
+     Objetivo: Apresentar projetos de tecnologia e inovação educacional,
+               com foco em pensamento computacional, reconstrução de
+               portais e soluções futuras.
+     Autor : Rodrigo Barbosa
+     Data  : 2026
+     ===================================================================
+-->
+<html lang="pt-BR"> <!-- Define o idioma principal da página como português do Brasil -->
+
+<head>
+    <!-- Configuração de codificação de caracteres para suportar acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Ajuste da viewport para responsividade em dispositivos móveis, garantindo que o conteúdo se ajuste à tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- Título exibido na aba do navegador -->
+    <title>projetosrb · Portfólio de Soluções</title>
+    <!-- Link para o arquivo CSS externo que contém os estilos visuais da página -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Wrapper principal que envolve todo o conteúdo da página, utilizado para controle de layout -->
+    <div class="wrapper">
+        <!-- Seção hero: área de destaque com logo, título principal e chamada criativa -->
+        <div class="hero">
+            <!-- Container para logo e título principal -->
+            <div class="logo-titulo">
+                <!-- Imagem da logo do projeto; se falhar ao carregar, o atributo onerror oculta a imagem -->
+                <img src="assets/images/logo_projetosrb_2.png" alt="logo projetosrb" class="logo-simbolo"
+                    onerror="this.style.display='none'">
+                <!-- Título principal da marca -->
+                <h1>projetosrb</h1>
+            </div>
+            <!-- Slogan / tagline que resume a proposta da marca -->
+            <div class="tagline">IDEIAS EM CÓDIGO. SOLUÇÕES EM AÇÃO.</div>
+            <!-- Pequeno snippet de código ilustrando a mentalidade de desenvolvimento -->
+            <div class="code-snippet">
+                { ideias: true, código: 'limpo', resultado: 'real' }
+            </div>
+        </div>
+
+        <!-- Grade responsiva que exibe os cartões de cada projeto -->
+        <div class="projetos-grid">
+
+            <!-- Cartão do projeto 1: Cartilha Pedagógica (1º ao 5º Ano) -->
+            <div class="card-projeto">
+                <!-- Logo do projeto (UTFPR). Fallback com placeholder caso a imagem não seja encontrada -->
+                <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
+                    onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
+                <!-- Título do projeto -->
+                <h3>Cartilha Pedagógica</h3>
+                <!-- Descrição curta indicando faixa etária e foco principal -->
+                <div class="desc-curta">🎓 1º ao 5º Ano · Pensamento Criativo</div>
+                <!-- Descrição detalhada do conteúdo e objetivo do material didático -->
+                <div class="descricao-principal">
+                    Introdução ao Scratch para Professores da Educação Básica (1º ao 5º Ano)<br>
+                    Material didático interativo e acessível.
+                </div>
+                <!-- Link para acessar o projeto, abrindo em nova aba com segurança (noopener noreferrer) -->
+                <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica/" class="btn-projeto"
+                    target="_blank" rel="noopener noreferrer">
+                    <i>🔗</i> Acessar projeto
+                </a>
+            </div>
+
+            <!-- Cartão do projeto 2: Cartilha Pedagógica (6º ao 9º Ano) -->
+            <div class="card-projeto">
+                <!-- Mesma logo da UTFPR, com fallback similar -->
+                <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
+                    onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
+                <h3>Cartilha Pedagógica</h3>
+                <!-- Destaque para pensamento computacional e faixa etária seguinte -->
+                <div class="desc-curta">🧠 6º ao 9º Ano · Pensamento Computacional</div>
+                <div class="descricao-principal">
+                    Uma sequência didática para desenvolver o Pensamento Computacional do 6º ao 9º ano<br>
+                    Estratégias práticas com Scratch.
+                </div>
+                <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica-2/" class="btn-projeto"
+                    target="_blank" rel="noopener noreferrer">
+                    <i>🔗</i> Acessar projeto
+                </a>
+            </div>
+
+            <!-- Cartão do projeto 3: Netmax Fibra - reconstrução completa do portal -->
+            <div class="card-projeto">
+                <!-- Logo da Netmax Fibra; classe adicional para fundo preto caso necessário no CSS -->
+                <img src="assets/images/logo_netmax.jpeg" alt="Logo Netmax Fibra" class="logo-projeto logo-fundo-preto"
+                    onerror="this.src='https://placehold.co/100x80?text=NETMAX'">
+                <h3>Netmax Fibra</h3>
+                <div class="desc-curta">🌐 Reconstrução completa</div>
+                <div class="descricao-principal">
+                    Reconstrução completa do portal institucional da Netmax Fibra<br>
+                    Experiência moderna, performance e design responsivo.
+                </div>
+                <a href="https://barbosarodrigonetmax.github.io/netmax-fibra/index.html" class="btn-projeto"
+                    target="_blank" rel="noopener noreferrer">
+                    <i>🔗</i> Acessar projeto
+                </a>
+            </div>
+
+            <!-- Cartão do projeto 4: Novos Horizontes - projeto futuro em desenvolvimento -->
+            <div class="card-projeto">
+                <!-- Logo da própria projetosrb, também com fundo preto opcional -->
+                <img src="assets/images/logo_projetosrb_6.png" alt="Logo projetosrb"
+                    class="logo-projeto logo-fundo-preto"
+                    onerror="this.src='https://placehold.co/100x80?text=projetosrb'">
+                <h3>Novos Horizontes</h3>
+                <div class="desc-curta">🚀 Em breve · inovação</div>
+                <div class="descricao-principal">
+                    Reservado para projetos futuros<br>
+                    Novas soluções, tecnologias emergentes e ideias em evolução.
+                </div>
+                <!-- Botão que substitui o link, indicando que o projeto ainda está em desenvolvimento -->
+                <button class="btn-projeto" id="btnProjetoFuturo">
+                    <i>✨</i> Em desenvolvimento
+                </button>
+            </div>
+        </div>
+
+        <!-- Rodapé com informações institucionais e descrição do portfólio -->
+        <div class="footer">
+            <span>projetosrb · IDEIAS EM CÓDIGO. SOLUÇÕES EM AÇÃO. </span>
+            <!-- Separador visual entre os textos do rodapé -->
+            <span style="display: inline-block; margin: 0 8px">|</span>
+            <span>Portfólio de inovação e tecnologia educacional</span>
+        </div>
+    </div>
+
+    <!-- Inclusão do arquivo JavaScript externo que gerencia interações (ex.: botão de projeto futuro) -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
