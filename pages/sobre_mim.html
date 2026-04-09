@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--
+     ===================================================================
+        projetosrb · Sobre Rodrigo Barbosa
+     ===================================================================
+        Objetivo: Página institucional com biografia, formação acadêmica,
+                  contatos e trajetória profissional, mantendo a identidade
+                  visual do portfólio principal.
+        Autor : Rodrigo Barbosa
+        Data  : 2026
+     ===================================================================
+-->
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 para suporte total a acentos e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura a viewport para responsividade em dispositivos móveis, garantindo que o conteúdo se ajuste à tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- Título da aba do navegador, importante para SEO e identificação da página -->
+    <title>projetosrb · Sobre Rodrigo Barbosa</title>
+    <!-- Importa as fontes Poppins e Inter do Google Fonts para manter a identidade visual consistente com o portfólio principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Importa o arquivo CSS principal que contém todos os estilos globais do portfólio -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Wrapper principal que envolve todo o conteúdo da página, utilizado para controle de layout -->
+    <div class="wrapper">
+        <!-- Botão de retorno que permite ao usuário voltar facilmente para a página inicial do portfólio -->
+        <a href="../index.html" class="btn-voltar">
+            <!-- Símbolo de seta para indicar ação de voltar -->
+            <span>←</span> Voltar ao portfólio
+        </a>
+
+        <!-- Container principal que agrupa todo o conteúdo específico da página "sobre" -->
+        <div class="sobre-container">
+            <!-- Seção Hero: área de destaque com logo, título e uma tagline que resume o propósito -->
+            <div class="hero">
+                <!-- Div que agrupa a logo e o título principal -->
+                <div class="logo-titulo">
+                    <!-- Imagem da logo do projetosrb; se não carregar, o evento onerror a oculta -->
+                    <img src="../assets/images/logo_projetosrb_2.png" alt="logo projetosrb" class="logo-simbolo"
+                        onerror="this.style.display='none'">
+                    <!-- Título principal da página -->
+                    <h1>projetosrb</h1>
+                </div>
+                <!-- Tagline que descreve o conteúdo da seção -->
+                <div class="tagline">SOBRE O CRIADOR · TRAJETÓRIA & FORMAÇÃO</div>
+                <!-- Pequeno snippet de código estilizado que representa de forma criativa os dados do criador -->
+                <div class="code-snippet">
+                    { criador: 'Rodrigo Barbosa', paixão: 'educação & tecnologia', visão: 'inovação' }
+                </div>
+            </div>
+
+            <!-- Card principal que exibe o perfil e as informações de contato -->
+            <div class="profile-card">
+                <!-- Linha de perfil que organiza avatar e dados lado a lado -->
+                <div class="perfil-linha">
+                    <!-- Envoltório da imagem de avatar -->
+                    <div class="avatar-wrapper">
+                        <!-- Imagem do avatar de Rodrigo Barbosa; caso não exista, usa um placeholder do placehold.co -->
+                        <img src="../assets/images/avatar_rodrigo.png" alt="Rodrigo Barbosa" class="avatar-img"
+                             onerror="this.src='https://placehold.co/200x200?text=Rodrigo+Barbosa';this.onerror=null;">
+                    </div>
+                    <!-- Div que contém as informações textuais e de contato -->
+                    <div class="info-dados">
+                        <!-- Nome completo -->
+                        <h2>Rodrigo Barbosa</h2>
+                        <!-- Badge que exibirá a idade calculada dinamicamente via JavaScript (nascimento: 29/05/1979) -->
+                        <div class="badge-idade" id="idadeDinamica">● Carregando idade...</div>
+                        
+                        <!-- Item de contato: telefone -->
+                        <div class="contato-item">
+                            <!-- Ícone representando telefone -->
+                            <span class="contato-icone">📞</span>
+                            <!-- Span com o texto do telefone, possui ID para ser referenciado no botão copiar -->
+                            <span class="contato-texto" id="telefoneTexto">43 9.9930-7234</span>
+                            <!-- Botão que ao ser clicado copia o conteúdo do span correspondente -->
+                            <button class="btn-copiar" data-copiar="telefoneTexto">Copiar</button>
+                        </div>
+                        <!-- Item de contato: e-mail -->
+                        <div class="contato-item">
+                            <span class="contato-icone">✉️</span>
+                            <!-- Span com o texto do e-mail, possui ID para ser referenciado no botão copiar -->
+                            <span class="contato-texto" id="emailTexto">barbosa.rodrigo.1979@gmail.com</span>
+                            <button class="btn-copiar" data-copiar="emailTexto">Copiar</button>
+                        </div>
+                        <!-- Item de contato: localização -->
+                        <div class="contato-item">
+                            <span class="contato-icone">📍</span>
+                            <span class="contato-texto">Siqueira Campos - Paraná - Brasil · Tecnologia & Educação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card que apresenta a trajetória e o propósito profissional -->
+            <div class="card-projeto">
+                <!-- Título com ícone para maior expressividade -->
+                <h3>📖 Trajetória & Propósito</h3>
+                <!-- Div que contém a descrição principal da biografia -->
+                <div class="descricao-principal">
+                    Profissional com sólida formação em <strong>Ciência da Computação</strong> e <strong>Sistemas de Informação</strong>, 
+                    unindo tecnologia, criatividade e educação. Atualmente cursando <strong>Licenciatura em Computação</strong> para 
+                    potencializar o ensino do pensamento computacional e desenvolvimento de soluções inovadoras. 
+                    Idealizador do portfólio <strong>projetosrb</strong>, onde ideias se transformam em código e resultados reais.
+                </div>
+                <!-- Snippet de código com uma frase de efeito, reforçando a identidade visual -->
+                <div class="code-snippet">
+                    "IDEIAS EM CÓDIGO. SOLUÇÕES EM AÇÃO."
+                </div>
+            </div>
+
+            <!-- Título da seção de formação acadêmica -->
+            <h2>🎓 Formação Acadêmica</h2>
+            
+            <!-- Grid que organiza os cards de cada formação em layout responsivo -->
+            <div class="formacao-grid">
+                <!-- Card: Ciência da Computação com logo da instituição -->
+                <div class="card-formacao">
+                    <!-- Envoltório para a logo da instituição de ensino -->
+                    <div class="curso-logo-wrapper">
+                        <!-- Logo da Uniandrade; se falhar, exibe placeholder -->
+                        <img src="../assets/images/logo_uniandrade.webp" alt="Logo Uniandrade" class="logo-instituicao"
+                             onerror="this.src='https://placehold.co/110x90?text=Uniandrade'">
+                    </div>
+                    <!-- Título do curso com ícone temático -->
+                    <div class="curso-titulo">💻 Ciência da Computação</div>
+                    <!-- Período de realização do curso -->
+                    <div class="curso-periodo">📅 2002 – 2006</div>
+                    <!-- Descrição resumida dos conhecimentos adquiridos -->
+                    <div class="curso-desc">
+                        Fundamentos de algoritmos, engenharia de software, estruturas de dados e visão sistêmica para criação de soluções tecnológicas robustas.
+                    </div>
+                </div>
+                
+                <!-- Card: Sistemas de Informação com logo da instituição -->
+                <div class="card-formacao">
+                    <div class="curso-logo-wrapper">
+                        <!-- Logo da Universidade Positivo (UP); fallback em caso de erro -->
+                        <img src="../assets/images/UP_logo.png" alt="Logo Universidade Positivo" class="logo-instituicao"
+                             onerror="this.src='https://placehold.co/110x90?text=UP'">
+                    </div>
+                    <div class="curso-titulo">📊 Sistemas de Informação</div>
+                    <div class="curso-periodo">📅 2007 – 2012</div>
+                    <div class="curso-desc">
+                        Gestão de processos, análise de sistemas, banco de dados e estratégias para alinhar TI aos objetivos organizacionais.
+                    </div>
+                </div>
+                
+                <!-- Card: Licenciatura em Computação (cursando) com logo da instituição -->
+                <div class="card-formacao">
+                    <div class="curso-logo-wrapper">
+                        <!-- Logo da UTFPR; fallback em caso de falha no carregamento -->
+                        <img src="../assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-instituicao"
+                             onerror="this.src='https://placehold.co/110x90?text=UTFPR'">
+                    </div>
+                    <div class="curso-titulo">🧑‍🏫 Licenciatura em Computação</div>
+                    <div class="curso-periodo">📅 2024 – Atualmente</div>
+                    <div class="curso-desc">
+                        Formação pedagógica e metodologias ativas para o ensino da computação na educação básica, pensamento computacional e práticas inovadoras.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container para diferenciais: projetos em destaque e filosofia de trabalho -->
+            <div class="diferenciais-container">
+                <!-- Card que lista projetos em destaque -->
+                <div class="card-formacao">
+                    <div class="curso-titulo">🚀 Projetos em Destaque</div>
+                    <div class="curso-desc">
+                        ✦ <strong>Cartilhas Pedagógicas Scratch</strong> (1º ao 9º ano)<br>
+                        ✦ <strong>Netmax Fibra</strong> – reconstrução de portal institucional<br>
+                        ✦ <strong>projetosrb</strong> – portfólio de soluções e inovação educacional<br>
+                        ✦ Futuros horizontes: novas tecnologias, gamificação e IA aplicada à educação.
+                    </div>
+                </div>
+                <!-- Card que descreve a filosofia de trabalho -->
+                <div class="card-formacao">
+                    <div class="curso-titulo">💡 Filosofia de Trabalho</div>
+                    <div class="curso-desc">
+                        Código limpo, experiência do usuário, acessibilidade e paixão por ensinar. 
+                        Acredito que o pensamento computacional é ferramenta essencial para formar cidadãos críticos e criativos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citação motivacional e visão pessoal, destacada visualmente -->
+            <div class="citacao">
+                “A tecnologia move o mundo, mas é a educação que transforma vidas. Cada linha de código pode abrir novos horizontes.”
+                <br>— Rodrigo Barbosa
+            </div>
+
+            <!-- Rodapé da página, alinhado com o design original do portfólio -->
+            <div class="footer">
+                <span>projetosrb · IDEIAS EM CÓDIGO. SOLUÇÕES EM AÇÃO. </span>
+                <!-- Separador visual entre os textos do rodapé -->
+                <span class="footer-separator">|</span>
+                <span>Portfólio de inovação e tecnologia educacional — Sobre o autor</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusão do script externo que gerencia idade dinâmica, funcionalidade de copiar e fallback do avatar -->
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

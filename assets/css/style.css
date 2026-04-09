@@ -5,234 +5,359 @@
 Objetivo: Estilizar a página de exibição de projetos com fundo
            temático, cards responsivos, efeitos de vidro (glassmorphism),
            animações suaves e adaptação para dispositivos móveis.
+           
+           INCLUI ESTILOS DA PÁGINA "SOBRE MIM" (sobre_mim.html)
+           INCLUI ESTILOS DO CARROSSEL (index.html)
+           
+           ✨ ATUALIZAÇÃO: Adicionados estilos específicos para o
+           card "Sobre Mim" no carrossel e melhorias no layout.
+           
 Autor : Rodrigo Barbosa
-Data  : 2026
+Data  : 2026 (Atualizado com estilos do carrossel)
 ===================================================================
 */
 
 /* Seletor universal: aplica reset de margens, preenchimentos e modelo de caixa */
 * {
     margin: 0;
-    /* Remove margem padrão de todos os elementos */
     padding: 0;
-    /* Remove preenchimento padrão de todos os elementos */
     box-sizing: border-box;
-    /* Faz com que largura/altura incluam bordas e preenchimentos */
 }
 
 /* Estilo do corpo da página */
 body {
-    /* Imagem de fundo (caminho relativo) - deve existir na pasta ../images/ */
     background-image: url('../images/fundo_projetosrb.png');
     background-size: cover;
-    /* A imagem cobre toda a área sem distorção, cortando se necessário */
     background-position: center center;
-    /* Centraliza a imagem de fundo */
     background-attachment: fixed;
-    /* Fundo fixo durante a rolagem */
     background-repeat: no-repeat;
-    /* Impede repetição da imagem */
-    /* Pilha de fontes: prioriza Poppins, depois fallbacks */
     font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, 'Inter', sans-serif;
     color: #f0f3f8;
-    /* Cor do texto principal (branco acinzentado) */
     line-height: 1.5;
-    /* Espaçamento entre linhas confortável */
     scroll-behavior: smooth;
-    /* Rolagem suave ao usar links âncora */
 }
 
 /* Pseudo-elemento para criar um gradiente radial sobreposto ao fundo */
 body::before {
     content: "";
-    /* Necessário para exibir o pseudo-elemento */
     position: fixed;
-    /* Fixo em relação à viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradiente radial: centro deslocado, cores suaves com transparência */
     background: radial-gradient(circle at 20% 30%, rgba(255, 250, 235, 0.25), rgba(255, 245, 220, 0.4));
     pointer-events: none;
-    /* Permite clicar através do gradiente */
     z-index: 0;
-    /* Coloca atrás do conteúdo principal */
 }
 
 /* Contêiner principal que envolve todo o conteúdo da página */
 .wrapper {
     position: relative;
-    /* Contexto de empilhamento para z-index */
     z-index: 2;
-    /* Fica acima do pseudo-elemento body::before */
     max-width: 1400px;
-    /* Largura máxima para telas grandes */
     margin: 0 auto;
-    /* Centraliza horizontalmente */
     padding: 2rem 1.5rem 3rem;
-    /* Espaçamento interno: topo 2rem, laterais 1.5rem, inferior 3rem */
 }
 
 /* Seção hero (cabeçalho principal com efeito glassmorphism) */
 .hero {
     background: rgba(8, 12, 25, 0.75);
-    /* Fundo escuro semi-transparente */
     backdrop-filter: blur(10px);
-    /* Desfoque no fundo atrás do elemento (efeito vidro) */
     border-radius: 3rem;
-    /* Bordas muito arredondadas */
     padding: 2rem;
-    /* Espaçamento interno */
     margin-bottom: 3.5rem;
-    /* Espaço abaixo do hero */
     text-align: center;
-    /* Centraliza o texto interno */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Borda sutil clara */
     box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.4);
-    /* Sombra externa para profundidade */
+}
+
+/* Estilo específico para o hero na página Sobre */
+.sobre-container .hero {
+    margin-bottom: 2rem;
 }
 
 /* Container flexível para o logo e o título principal */
 .logo-titulo {
     display: flex;
     align-items: center;
-    /* Alinha verticalmente ao centro */
     justify-content: center;
-    /* Centraliza horizontalmente */
     gap: calc(1rem * 1.15);
-    /* Espaçamento entre os filhos: 1.15rem */
     flex-wrap: wrap;
-    /* Permite quebra de linha em telas pequenas */
     margin-bottom: 0.75rem;
-    /* Espaço abaixo do container */
 }
 
 /* Estilo da imagem do logo/símbolo */
 .logo-simbolo {
     width: calc(120px * 1.15);
-    /* Largura: 138px (120 * 1.15) */
     height: auto;
-    /* Altura automática mantém proporção */
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-    /* Sombra sutil na imagem */
     background: rgba(255, 255, 255, 0.1);
-    /* Fundo levemente branco transparente */
     border-radius: 20px;
-    /* Bordas arredondadas */
     padding: 6px;
-    /* Espaço interno ao redor da imagem */
 }
 
 /* Título principal h1 dentro da seção hero */
 .hero h1 {
     font-size: calc(3rem * 1.15);
-    /* Tamanho: 3.45rem (3 * 1.15) */
     font-weight: 700;
-    /* Negrito forte */
     letter-spacing: -0.02em;
-    /* Leve redução do espaçamento entre letras */
-    /* Gradiente linear do branco para azul claro aplicado ao texto */
     background: linear-gradient(135deg, #FFFFFF, #B0C4FF);
     background-clip: text;
-    /* Padrão moderno: gradiente cortado pelo texto */
     -webkit-background-clip: text;
-    /* Compatibilidade com WebKit */
     color: transparent;
-    /* Cor do texto transparente para mostrar o gradiente */
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra suave para legibilidade */
     line-height: 1.2;
-    /* Altura da linha mais justa */
 }
 
 /* Subtítulo / tagline */
 .tagline {
     font-size: 1.3rem;
-    /* Tamanho médio */
     font-weight: 400;
-    /* Peso normal */
     color: #e0e7ff;
-    /* Azul bem claro */
     border-top: 1px dashed rgba(255, 255, 255, 0.3);
-    /* Linha tracejada superior */
     display: inline-block;
-    /* Ajusta largura ao conteúdo */
     padding-top: 0.8rem;
-    /* Espaço acima do texto */
     margin-top: 0.5rem;
-    /* Margem superior */
     letter-spacing: 0.5px;
-    /* Pequeno espaçamento entre letras */
 }
 
 /* Bloco de código estilizado (exemplo de snippet) */
 .code-snippet {
     font-family: 'Fira Code', 'Courier New', monospace;
-    /* Fonte monoespaçada */
     font-size: calc(0.85rem * 1.15);
-    /* Aproximadamente 0.9775rem */
     background: rgba(0, 0, 0, 0.5);
-    /* Fundo escuro semi-transparente */
     display: inline-block;
-    /* Ajusta ao conteúdo */
     padding: 0.3rem 1rem;
-    /* Preenchimento vertical e horizontal */
     border-radius: 40px;
-    /* Bordas muito arredondadas (efeito pílula) */
     margin-top: 1rem;
-    /* Espaço acima */
     color: #b9fbc0;
-    /* Verde claro */
 }
 
-/* Grid responsivo para os cards dos projetos */
+/* Estilo específico para o code-snippet dentro do card-projeto na página Sobre */
+.card-projeto .code-snippet {
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* Estilo específico para o hero da página Sobre */
+.sobre-container .hero {
+    margin-bottom: 2rem;
+}
+
+.sobre-container .code-snippet {
+    margin-top: 0.8rem;
+}
+
+/* ============================================================ */
+/* ESTILOS DO CARROSSEL (index.html)                          */
+/* ============================================================ */
+
+/* Container principal do carrossel */
+.carrossel-container {
+    position: relative;
+    margin: 2rem 0;
+    padding: 0 2.5rem;
+}
+
+/* Container dos slides - layout horizontal com scroll suave */
+.carrossel-slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Esconde a barra de scroll em navegadores WebKit (Chrome, Safari) */
+    scrollbar-width: thin;
+    scrollbar-color: #ff6a3d rgba(255, 255, 255, 0.2);
+}
+
+/* Estilização da barra de scroll (WebKit) */
+.carrossel-slides::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrossel-slides::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.carrossel-slides::-webkit-scrollbar-thumb {
+    background: #ff6a3d;
+    border-radius: 10px;
+}
+
+/* Cada item do carrossel */
+.carrossel-item {
+    flex: 0 0 calc(33.333% - 1.35rem);
+    min-width: 280px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito de escala no item central (opcional, melhora a experiência) */
+.carrossel-item:hover {
+    transform: scale(1.02);
+}
+
+/* Botões de navegação do carrossel (setas) */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 106, 61, 0.85);
+    backdrop-filter: blur(4px);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão anterior (esquerda) */
+.carrossel-btn-prev {
+    left: 0;
+}
+
+/* Botão próximo (direita) */
+.carrossel-btn-next {
+    right: 0;
+}
+
+/* Efeito hover nos botões de navegação */
+.carrossel-btn:hover {
+    background: #ff4d1a;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito active (clique) */
+.carrossel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Indicadores (dots) do carrossel */
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Estilo base de cada indicador */
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+/* Indicador ativo (slide atual) */
+.indicador.ativo {
+    background: #ff6a3d;
+    width: 28px;
+    border-radius: 12px;
+}
+
+/* Efeito hover nos indicadores */
+.indicador:hover {
+    background: rgba(255, 106, 61, 0.7);
+    transform: scale(1.2);
+}
+
+/* ============================================================ */
+/* ESTILOS ESPECÍFICOS PARA O CARD "SOBRE MIM" NO CARROSSEL   */
+/* ============================================================ */
+
+/* Estilo específico para o avatar no card do carrossel */
+.avatar-card {
+    border-radius: 50% !important;
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: cover !important;
+    padding: 0 !important;
+    border: 3px solid #ff6a3d;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito hover no avatar do card Sobre Mim */
+.avatar-card:hover {
+    transform: scale(1.05);
+    border-color: #ffb347;
+}
+
+/* Ajuste responsivo para o avatar em telas pequenas */
+@media (max-width: 680px) {
+    .avatar-card {
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+/* ============================================================ */
+/* FIM DOS ESTILOS DO CARROSSEL                                */
+/* ============================================================ */
+
+/* Grid responsivo para os cards dos projetos (fallback para páginas sem carrossel) */
 .projetos-grid {
     display: grid;
-    /* Cria colunas com largura mínima de 300px, preenchendo o espaço disponível */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    /* Espaçamento entre linhas e colunas */
     margin: 2rem 0;
-    /* Margem vertical */
 }
 
 /* Estilo de cada card de projeto */
 .card-projeto {
     background: rgba(5, 8, 18, 0.22);
-    /* Fundo escuro muito transparente */
     border-radius: 2rem;
-    /* Bordas arredondadas */
     padding: 1.8rem 1.5rem 2rem;
-    /* Preenchimento: topo, laterais, inferior */
-    /* Transições suaves para transformações, sombra e fundo */
     transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.2s;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Borda clara sutil */
     box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.3);
-    /* Sombra pronunciada */
     display: flex;
     flex-direction: column;
-    /* Organiza conteúdo em coluna */
     align-items: center;
-    /* Centraliza itens horizontalmente */
     text-align: center;
-    /* Texto centralizado */
     backdrop-filter: blur(1px);
-    /* Leve desfoque no fundo */
+}
+
+/* Estilo específico para card-projeto na página Sobre */
+.sobre-container .card-projeto {
+    margin-bottom: 2rem;
+    padding: 1.8rem;
+}
+
+.sobre-container .card-projeto h3 {
+    margin-bottom: 0.8rem;
+}
+
+.sobre-container .card-projeto .descricao-principal {
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
 }
 
 /* Efeito hover no card: levanta e destaca */
 .card-projeto:hover {
     transform: translateY(-8px);
-    /* Move 8px para cima */
     background: rgba(5, 8, 18, 0.3);
-    /* Fundo um pouco mais opaco */
     border-color: rgba(255, 140, 80, 0.6);
-    /* Borda com tom laranja */
     box-shadow: 0 28px 35px -14px black;
-    /* Sombra mais intensa e escura */
 }
 
 /* Estilo das imagens dos logos dentro dos cards */
@@ -240,19 +365,12 @@ body::before {
     width: 110px;
     height: 90px;
     object-fit: contain;
-    /* A imagem se ajusta sem cortar, mantendo proporção */
     background: #ffffff;
-    /* Fundo branco para contraste (a maioria dos logos) */
     border-radius: 24px;
-    /* Bordas arredondadas */
     padding: 0.7rem;
-    /* Espaço interno ao redor do logo */
     margin-bottom: 1.4rem;
-    /* Espaço abaixo da imagem */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Sombra leve */
     overflow: visible;
-    /* Permite que transformações não sejam cortadas */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,10 +385,9 @@ body::before {
 .logo-projeto[src*="logo_netmax.jpeg"] {
     transform: scale(1.15);
     transform-origin: center center;
-    /* Mantém o centro fixo durante o zoom */
 }
 
-/* Aumento específico para o logo_projetosrb.png: escala 1.32x (15% extra sobre 1.15 = ~32%) */
+/* Aumento específico para o logo_projetosrb.png: escala 1.32x */
 .logo-projeto[src*="logo_projetosrb.png"] {
     transform: scale(1.32);
     transform-origin: center center;
@@ -281,18 +398,12 @@ body::before {
 .card-projeto .desc-curta,
 .card-projeto .descricao-principal {
     background: rgba(0, 0, 0, 0.55);
-    /* Fundo escuro semi-transparente para contraste */
     padding: 0.25rem 0.75rem;
-    /* Preenchimento interno */
     border-radius: 32px;
-    /* Bordas arredondadas */
     display: inline-block;
-    /* Ajusta largura ao conteúdo */
     width: auto;
     max-width: 95%;
-    /* Impede que ultrapasse a largura do card */
     backdrop-filter: blur(2px);
-    /* Pequeno desfoque no fundo */
 }
 
 /* Título do projeto */
@@ -308,10 +419,8 @@ body::before {
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
-    /* Texto todo em maiúsculas */
     letter-spacing: 1px;
     color: #ffb347;
-    /* Laranja dourado */
     margin-bottom: 0.75rem;
 }
 
@@ -323,37 +432,30 @@ body::before {
     color: #fefefe;
 }
 
-/* Botão de ação do projeto (ex.: "Ver projeto") */
+/* Botão de ação do projeto */
 .btn-projeto {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    /* Espaço entre ícone e texto */
     background: #ff6a3d;
-    /* Laranja vibrante */
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.8rem;
     border-radius: 50px;
-    /* Formato pílula */
     text-decoration: none;
-    /* Remove sublinhado de link */
     font-size: 0.95rem;
     transition: all 0.2s;
     border: none;
     cursor: pointer;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
     margin-top: auto;
-    /* Empurra o botão para o final do flex column */
 }
 
-/* Estilo para ícone fictício (i) dentro do botão - mantido como fallback */
 .btn-projeto i {
     font-style: normal;
     font-size: 1.2rem;
 }
 
-/* Hover do botão: escurece e aumenta levemente */
 .btn-projeto:hover {
     background: #ff4d1a;
     transform: scale(1.02);
@@ -372,68 +474,407 @@ body::before {
     color: #b9c7e6;
 }
 
-/* Estilos responsivos para telas com largura máxima de 680px */
+/* Rodapé específico para a página Sobre */
+.sobre-container .footer {
+    margin-top: 2.5rem;
+}
+
+/* ============================================================ */
+/* ESTILOS ESPECÍFICOS PARA A PÁGINA "SOBRE MIM" (sobre_mim.html) */
+/* ============================================================ */
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card principal de perfil */
+.profile-card {
+    background: rgba(5, 8, 18, 0.28);
+    backdrop-filter: blur(8px);
+    border-radius: 2.5rem;
+    padding: 2rem 2rem 2.2rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 140, 80, 0.5);
+    box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.4);
+}
+
+.perfil-linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-wrapper {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.avatar-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff6a3d;
+    background: #1e1e2f;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.avatar-img:hover {
+    transform: scale(1.02);
+}
+
+.info-dados {
+    flex: 1;
+    min-width: 240px;
+}
+
+.info-dados h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFFFFF, #FFB347);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.badge-idade {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 0.25rem 1rem;
+    border-radius: 60px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffb347;
+    margin-bottom: 1rem;
+    border-left: 3px solid #ff6a3d;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0.8rem 0;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.6rem 1rem;
+    border-radius: 60px;
+    width: fit-content;
+    max-width: 100%;
+    backdrop-filter: blur(2px);
+    transition: 0.2s;
+}
+
+.contato-item:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateX(5px);
+}
+
+.contato-icone {
+    font-size: 1.3rem;
+}
+
+.contato-texto {
+    font-size: 0.95rem;
+    font-weight: 500;
+    word-break: break-all;
+    color: #f0f3f8;
+}
+
+.btn-copiar {
+    background: #ff6a3d;
+    border: none;
+    padding: 0.25rem 0.8rem;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    margin-left: 8px;
+}
+
+.btn-copiar:hover {
+    background: #ff4d1a;
+    transform: scale(1.02);
+}
+
+/* Título de seção Formação Acadêmica */
+.sobre-container h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Grid de formação / escolaridade - MESMO ESTILO DO projetos-grid */
+.formacao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Card de formação - MESMO ESTILO DO card-projeto */
+.card-formacao {
+    background: rgba(5, 8, 18, 0.22);
+    border-radius: 2rem;
+    padding: 1.8rem 1.5rem 2rem;
+    transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(1px);
+}
+
+/* Efeito hover no card de formação - MESMO ESTILO */
+.card-formacao:hover {
+    transform: translateY(-8px);
+    background: rgba(5, 8, 18, 0.3);
+    border-color: rgba(255, 140, 80, 0.6);
+    box-shadow: 0 28px 35px -14px black;
+}
+
+/* ESTILO PADRONIZADO PARA AS LOGOS DAS INSTITUIÇÕES NOS CARDS DE FORMAÇÃO - MESMO TAMANHO E ESTILO DO logo-projeto */
+.logo-instituicao {
+    width: 110px;
+    height: 90px;
+    object-fit: contain;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 0.7rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo-instituicao:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Título do curso - alinhado com h3 dos projetos */
+.card-formacao .curso-titulo {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.25rem 0.75rem;
+    border-radius: 32px;
+    display: inline-block;
+    width: auto;
+    max-width: 95%;
+    backdrop-filter: blur(2px);
+}
+
+/* Período do curso - similar ao desc-curta */
+.card-formacao .curso-periodo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffb347;
+    margin-bottom: 0.75rem;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.25rem 0.75rem;
+    border-radius: 32px;
+    display: inline-block;
+    width: auto;
+    max-width: 95%;
+    backdrop-filter: blur(2px);
+}
+
+/* Descrição do curso - similar ao descricao-principal */
+.card-formacao .curso-desc {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0.8rem 0 0.5rem;
+    color: #fefefe;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 0.5rem 0.75rem;
+    border-radius: 24px;
+    backdrop-filter: blur(2px);
+}
+
+/* Wrapper do logo - centralizado */
+.curso-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.citacao {
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 5px solid #ff6a3d;
+    padding: 1.2rem 1.8rem;
+    border-radius: 1.5rem;
+    margin: 2rem 0 1rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(5px);
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 1.5rem;
+}
+
+.btn-voltar:hover {
+    background: #ff6a3d;
+    border-color: #ff6a3d;
+    transform: translateX(-5px);
+}
+
+/* Container flexível para diferenciais */
+.diferenciais-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.8rem 0;
+}
+
+.diferenciais-container .card-formacao {
+    flex: 1;
+}
+
+.diferenciais-container .curso-desc {
+    text-align: left;
+}
+
+/* Estilos responsivos para a página Sobre */
 @media (max-width: 680px) {
-    .wrapper {
-        padding: 1rem 1rem 2rem;
-        /* Reduz preenchimento geral */
+    .info-dados h2 {
+        font-size: 1.7rem;
     }
-
-    .hero {
+    .avatar-img {
+        width: 120px;
+        height: 120px;
+    }
+    .contato-item {
+        width: 100%;
+    }
+    .profile-card {
         padding: 1.5rem;
-        /* Menos espaço interno */
     }
-
-    .hero h1 {
-        font-size: calc(2.2rem * 1.15);
-        /* Título menor: aproximadamente 2.53rem */
-    }
-
-    .tagline {
-        font-size: 1rem;
-        /* Subtítulo menor */
-    }
-
-    .card-projeto h3 {
+    
+    /* Ajuste para os cards de formação em telas pequenas */
+    .card-formacao .curso-titulo {
         font-size: 1.4rem;
-        /* Título do card menor */
     }
-
-    .logo-projeto {
+    
+    .logo-instituicao {
         width: 85px;
-        /* Logo reduzido */
         height: 75px;
         padding: 0.5rem;
     }
 
-    /* Mantém escala para netmax em mobile */
+    .sobre-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============================================================ */
+/* FIM DOS ESTILOS DA PÁGINA SOBRE */
+/* ============================================================ */
+
+/* Estilos responsivos para telas com largura máxima de 680px */
+@media (max-width: 680px) {
+    .wrapper {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: calc(2.2rem * 1.15);
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .card-projeto h3 {
+        font-size: 1.4rem;
+    }
+
+    .logo-projeto {
+        width: 85px;
+        height: 75px;
+        padding: 0.5rem;
+    }
+
     .logo-projeto[src*="logo_netmax.jpeg"] {
         transform: scale(1.15);
     }
 
-    /* Mantém escala para logo principal em mobile */
     .logo-projeto[src*="logo_projetosrb_6.png"] {
         transform: scale(1.32);
     }
 
     .btn-projeto {
         padding: 0.6rem 1.4rem;
-        /* Botão menor */
     }
 
     .logo-simbolo {
         width: calc(90px * 1.15);
-        /* Logo do cabeçalho reduzido: ~103.5px */
     }
 
     .code-snippet {
         font-size: calc(0.75rem * 1.15);
-        /* Texto do snippet reduzido */
     }
 
     .logo-titulo {
         margin-bottom: 0.5rem;
         gap: calc(0.75rem * 1.15);
+    }
+
+    /* Ajustes responsivos do carrossel */
+    .carrossel-container {
+        padding: 0 1.5rem;
+    }
+    
+    .carrossel-item {
+        flex: 0 0 calc(100% - 1rem);
+    }
+    
+    .carrossel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
     }
 }
 
@@ -442,13 +883,10 @@ body::before {
     0% {
         opacity: 0;
         transform: translateY(20px);
-        /* Começa 20px abaixo e invisível */
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
-        /* Posição final normal */
     }
 }
 
@@ -456,22 +894,36 @@ body::before {
 .card-projeto {
     animation: fadeUp 0.5s ease forwards;
     opacity: 0;
-    /* Estado inicial (sobrescrito pela animação) */
+}
+
+/* Aplica a mesma animação aos cards de formação */
+.card-formacao {
+    animation: fadeUp 0.5s ease forwards;
+    opacity: 0;
 }
 
 /* Delays progressivos para cada card (efeito cascata) */
-.card-projeto:nth-child(1) {
+.card-projeto:nth-child(1),
+.card-formacao:nth-child(1) {
     animation-delay: 0.05s;
 }
 
-.card-projeto:nth-child(2) {
+.card-projeto:nth-child(2),
+.card-formacao:nth-child(2) {
     animation-delay: 0.1s;
 }
 
-.card-projeto:nth-child(3) {
+.card-projeto:nth-child(3),
+.card-formacao:nth-child(3) {
     animation-delay: 0.15s;
 }
 
-.card-projeto:nth-child(4) {
+.card-projeto:nth-child(4),
+.card-formacao:nth-child(4) {
     animation-delay: 0.2s;
+}
+
+.card-projeto:nth-child(5),
+.card-formacao:nth-child(5) {
+    animation-delay: 0.25s;
 }

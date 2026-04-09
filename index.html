@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <!--                    ===================================================================
-                     projetosrb · Portfólio de Soluções
+                     projetosrb · Portfólio de Soluções (VERSÃO CARROSSEL)
      ===================================================================
      Objetivo: Apresentar projetos de tecnologia e inovação educacional,
                com foco em pensamento computacional, reconstrução de
                portais e soluções futuras.
+               
+               🆕 VERSÃO CARROSSEL: Os projetos agora são exibidos em um 
+               slideshow interativo com navegação por botões e indicadores.
+               
+               ✨ NOVO CARD: Adicionado card "Sobre Mim" com link para a 
+               página institucional do criador.
+               
      Autor : Rodrigo Barbosa
-     Data  : 2026
+     Data  : 2026 (Atualizado para versão carrossel com card Sobre)
      ===================================================================
 -->
 <html lang="pt-BR"> <!-- Define o idioma principal da página como português do Brasil -->
@@ -17,7 +24,7 @@
     <!-- Ajuste da viewport para responsividade em dispositivos móveis, garantindo que o conteúdo se ajuste à tela -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <!-- Título exibido na aba do navegador -->
-    <title>projetosrb · Portfólio de Soluções</title>
+    <title>projetosrb · Portfólio de Soluções (Carrossel)</title>
     <!-- Link para o arquivo CSS externo que contém os estilos visuais da página -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -43,82 +50,125 @@
             </div>
         </div>
 
-        <!-- Grade responsiva que exibe os cartões de cada projeto -->
-        <div class="projetos-grid">
-
-            <!-- Cartão do projeto 1: Cartilha Pedagógica (1º ao 5º Ano) -->
-            <div class="card-projeto">
-                <!-- Logo do projeto (UTFPR). Fallback com placeholder caso a imagem não seja encontrada -->
-                <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
-                    onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
-                <!-- Título do projeto -->
-                <h3>Cartilha Pedagógica</h3>
-                <!-- Descrição curta indicando faixa etária e foco principal -->
-                <div class="desc-curta">🎓 1º ao 5º Ano · Pensamento Criativo</div>
-                <!-- Descrição detalhada do conteúdo e objetivo do material didático -->
-                <div class="descricao-principal">
-                    Introdução ao Scratch para Professores da Educação Básica (1º ao 5º Ano)<br>
-                    Material didático interativo e acessível.
+        <!-- ============================================================ -->
+        <!-- 🆕 CARROSSEL DE PROJETOS (SUBSTITUI O GRID ORIGINAL)        -->
+        <!-- ============================================================ -->
+        
+        <!-- Container principal do carrossel -->
+        <div class="carrossel-container">
+            
+            <!-- Container dos slides (itens do carrossel) -->
+            <div class="carrossel-slides" id="carrosselSlides">
+                
+                <!-- Slide 1: Cartilha Pedagógica (1º ao 5º Ano) -->
+                <div class="carrossel-item card-projeto">
+                    <!-- Logo do projeto (UTFPR). Fallback com placeholder caso a imagem não seja encontrada -->
+                    <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
+                        onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
+                    <!-- Título do projeto -->
+                    <h3>Cartilha Pedagógica</h3>
+                    <!-- Descrição curta indicando faixa etária e foco principal -->
+                    <div class="desc-curta">🎓 1º ao 5º Ano · Pensamento Criativo</div>
+                    <!-- Descrição detalhada do conteúdo e objetivo do material didático -->
+                    <div class="descricao-principal">
+                        Introdução ao Scratch para Professores da Educação Básica (1º ao 5º Ano)<br>
+                        Material didático interativo e acessível.
+                    </div>
+                    <!-- Link para acessar o projeto, abrindo em nova aba com segurança (noopener noreferrer) -->
+                    <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica/" class="btn-projeto"
+                        target="_blank" rel="noopener noreferrer">
+                        <i>🔗</i> Acessar projeto
+                    </a>
                 </div>
-                <!-- Link para acessar o projeto, abrindo em nova aba com segurança (noopener noreferrer) -->
-                <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica/" class="btn-projeto"
-                    target="_blank" rel="noopener noreferrer">
-                    <i>🔗</i> Acessar projeto
-                </a>
+
+                <!-- Slide 2: Cartilha Pedagógica (6º ao 9º Ano) -->
+                <div class="carrossel-item card-projeto">
+                    <!-- Mesma logo da UTFPR, com fallback similar -->
+                    <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
+                        onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
+                    <h3>Cartilha Pedagógica</h3>
+                    <!-- Destaque para pensamento computacional e faixa etária seguinte -->
+                    <div class="desc-curta">🧠 6º ao 9º Ano · Pensamento Computacional</div>
+                    <div class="descricao-principal">
+                        Uma sequência didática para desenvolver o Pensamento Computacional do 6º ao 9º ano<br>
+                        Estratégias práticas com Scratch.
+                    </div>
+                    <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica-2/" class="btn-projeto"
+                        target="_blank" rel="noopener noreferrer">
+                        <i>🔗</i> Acessar projeto
+                    </a>
+                </div>
+
+                <!-- Slide 3: Netmax Fibra - reconstrução completa do portal -->
+                <div class="carrossel-item card-projeto">
+                    <!-- Logo da Netmax Fibra; classe adicional para fundo preto caso necessário no CSS -->
+                    <img src="assets/images/logo_netmax.jpeg" alt="Logo Netmax Fibra" class="logo-projeto logo-fundo-preto"
+                        onerror="this.src='https://placehold.co/100x80?text=NETMAX'">
+                    <h3>Netmax Fibra</h3>
+                    <div class="desc-curta">🌐 Reconstrução completa</div>
+                    <div class="descricao-principal">
+                        Reconstrução completa do portal institucional da Netmax Fibra<br>
+                        Experiência moderna, performance e design responsivo.
+                    </div>
+                    <a href="https://barbosarodrigonetmax.github.io/netmax-fibra/index.html" class="btn-projeto"
+                        target="_blank" rel="noopener noreferrer">
+                        <i>🔗</i> Acessar projeto
+                    </a>
+                </div>
+
+<!-- ✨ Slide 4: Sobre Mim - Página institucional do criador (NOVO CARD) -->
+                <div class="carrossel-item card-projeto">
+                    <!-- Avatar do Rodrigo Barbosa como imagem do card; fallback para placeholder -->
+                    <img src="assets/images/logo_projetosrb_6.png" alt="Rodrigo Barbosa" class="logo-projeto logo-fundo-preto" # class="logo-projeto avatar-card"
+                        onerror="this.src='https://placehold.co/110x90?text=RB'">
+                    <!-- Título do card -->
+                    <h3>Sobre Mim</h3>
+                    <!-- Descrição curta indicando o tipo de conteúdo -->
+                    <div class="desc-curta">👤 Institucional · Criador</div>
+                    <!-- Descrição detalhada do que o usuário encontrará na página -->
+                    <div class="descricao-principal">
+                        Conheça a trajetória, formação acadêmica e filosofia de trabalho<br>
+                        de Rodrigo Barbosa, idealizador do projetosrb.
+                    </div>
+                    <!-- Link para a página Sobre Mim (arquivo local, mesmo diretório) -->
+                    <a href="pages/sobre_mim.html" class="btn-projeto">
+                        <i>👤</i> Conhecer criador
+                    </a>
+                </div>
+
+                <!-- Slide 5: Novos Horizontes - projeto futuro em desenvolvimento -->
+                <div class="carrossel-item card-projeto">
+                    <!-- Logo da própria projetosrb, também com fundo preto opcional -->
+                    <img src="assets/images/logo_projetosrb_6.png" alt="Logo projetosrb"
+                        class="logo-projeto logo-fundo-preto"
+                        onerror="this.src='https://placehold.co/100x80?text=projetosrb'">
+                    <h3>Novos Horizontes</h3>
+                    <div class="desc-curta">🚀 Em breve · inovação</div>
+                    <div class="descricao-principal">
+                        Reservado para projetos futuros<br>
+                        Novas soluções, tecnologias emergentes e ideias em evolução.
+                    </div>
+                    <!-- Botão que substitui o link, indicando que o projeto ainda está em desenvolvimento -->
+                    <button class="btn-projeto" id="btnProjetoFuturo">
+                        <i>✨</i> Em desenvolvimento
+                    </button>
+                </div>
+
+                
             </div>
 
-            <!-- Cartão do projeto 2: Cartilha Pedagógica (6º ao 9º Ano) -->
-            <div class="card-projeto">
-                <!-- Mesma logo da UTFPR, com fallback similar -->
-                <img src="assets/images/UTFPR_logo.png" alt="Logo UTFPR" class="logo-projeto"
-                    onerror="this.src='https://placehold.co/100x80?text=UTFPR'">
-                <h3>Cartilha Pedagógica</h3>
-                <!-- Destaque para pensamento computacional e faixa etária seguinte -->
-                <div class="desc-curta">🧠 6º ao 9º Ano · Pensamento Computacional</div>
-                <div class="descricao-principal">
-                    Uma sequência didática para desenvolver o Pensamento Computacional do 6º ao 9º ano<br>
-                    Estratégias práticas com Scratch.
-                </div>
-                <a href="https://barbosa-rodrigo-1979.github.io/scratch-na-educacao-basica-2/" class="btn-projeto"
-                    target="_blank" rel="noopener noreferrer">
-                    <i>🔗</i> Acessar projeto
-                </a>
-            </div>
+            <!-- 🆕 Botão de navegação ANTERIOR (seta esquerda) -->
+            <button class="carrossel-btn carrossel-btn-prev" id="btnPrev" aria-label="Projeto anterior">
+                ❮
+            </button>
 
-            <!-- Cartão do projeto 3: Netmax Fibra - reconstrução completa do portal -->
-            <div class="card-projeto">
-                <!-- Logo da Netmax Fibra; classe adicional para fundo preto caso necessário no CSS -->
-                <img src="assets/images/logo_netmax.jpeg" alt="Logo Netmax Fibra" class="logo-projeto logo-fundo-preto"
-                    onerror="this.src='https://placehold.co/100x80?text=NETMAX'">
-                <h3>Netmax Fibra</h3>
-                <div class="desc-curta">🌐 Reconstrução completa</div>
-                <div class="descricao-principal">
-                    Reconstrução completa do portal institucional da Netmax Fibra<br>
-                    Experiência moderna, performance e design responsivo.
-                </div>
-                <a href="https://barbosarodrigonetmax.github.io/netmax-fibra/index.html" class="btn-projeto"
-                    target="_blank" rel="noopener noreferrer">
-                    <i>🔗</i> Acessar projeto
-                </a>
-            </div>
+            <!-- 🆕 Botão de navegação PRÓXIMO (seta direita) -->
+            <button class="carrossel-btn carrossel-btn-next" id="btnNext" aria-label="Próximo projeto">
+                ❯
+            </button>
 
-            <!-- Cartão do projeto 4: Novos Horizontes - projeto futuro em desenvolvimento -->
-            <div class="card-projeto">
-                <!-- Logo da própria projetosrb, também com fundo preto opcional -->
-                <img src="assets/images/logo_projetosrb_6.png" alt="Logo projetosrb"
-                    class="logo-projeto logo-fundo-preto"
-                    onerror="this.src='https://placehold.co/100x80?text=projetosrb'">
-                <h3>Novos Horizontes</h3>
-                <div class="desc-curta">🚀 Em breve · inovação</div>
-                <div class="descricao-principal">
-                    Reservado para projetos futuros<br>
-                    Novas soluções, tecnologias emergentes e ideias em evolução.
-                </div>
-                <!-- Botão que substitui o link, indicando que o projeto ainda está em desenvolvimento -->
-                <button class="btn-projeto" id="btnProjetoFuturo">
-                    <i>✨</i> Em desenvolvimento
-                </button>
-            </div>
+            <!-- 🆕 Indicadores (dots) que mostram qual slide está ativo e permitem navegação direta -->
+            <div class="carrossel-indicadores" id="carrosselIndicadores"></div>
         </div>
 
         <!-- Rodapé com informações institucionais e descrição do portfólio -->
@@ -126,11 +176,11 @@
             <span>projetosrb · IDEIAS EM CÓDIGO. SOLUÇÕES EM AÇÃO. </span>
             <!-- Separador visual entre os textos do rodapé -->
             <span style="display: inline-block; margin: 0 8px">|</span>
-            <span>Portfólio de inovação e tecnologia educacional</span>
+            <span>Portfólio de inovação e tecnologia educacional (Carrossel interativo)</span>
         </div>
     </div>
 
-    <!-- Inclusão do arquivo JavaScript externo que gerencia interações (ex.: botão de projeto futuro) -->
+    <!-- Inclusão do arquivo JavaScript externo que gerencia interações (carrossel + botão de projeto futuro) -->
     <script src="assets/js/script.js"></script>
 </body>
 
